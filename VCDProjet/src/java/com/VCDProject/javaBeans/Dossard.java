@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -27,6 +28,10 @@ public class Dossard implements Serializable {
     int numRFID;
     int numDossard;
 
+    
+ @OneToOne(mappedBy="dossard")
+private Participant participant;
+  
 //*****************************************************************************************************************************************************************/
 //********************************************************     CONSTRUCTEURS CLASSE Dossard     *******************************************************************/
 //*****************************************************************************************************************************************************************/           

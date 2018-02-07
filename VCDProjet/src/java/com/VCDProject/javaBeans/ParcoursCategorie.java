@@ -8,8 +8,6 @@ package com.VCDProject.javaBeans;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,11 +20,15 @@ import javax.persistence.TemporalType;
 /******************************************************************************************************************************************************************/
 /******************************************************              CLASSE ParcoursCategorie          ************************************************************/
 /******************************************************************************************************************************************************************/
-@Entity
 
+//@IdClass(ParcoursCategorieID.class)
+@Entity
 public class ParcoursCategorie implements Serializable {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+@Id
+private Long idParcours;
+@Id
+private Long idCategorie;
+
     @Temporal(TemporalType.DATE)
     Date tempsMaxOr = new Date();
     @Temporal(TemporalType.DATE)
