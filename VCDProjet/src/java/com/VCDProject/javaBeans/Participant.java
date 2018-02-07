@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -45,6 +47,17 @@ public class Participant implements Serializable {
     @Temporal(TemporalType.DATE)
     Date dateInscription = new Date();
     boolean isAbandon;
+    
+    
+@ManyToOne
+private Parcours parcours;
+
+@ManyToOne
+private Categorie categorie;
+
+  @OneToOne
+private Dossard dossard;
+
 
 /******************************************************************************************************************************************************************/
 /*********************************************************     CONSTRUCTEURS CLASSE Participant     ***************************************************************/

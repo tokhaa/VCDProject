@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -23,10 +24,13 @@ import javax.persistence.TemporalType;
 /******************************************************              CLASSE ParcoursCategorie          ************************************************************/
 /******************************************************************************************************************************************************************/
 @Entity
-
 public class ParcoursCategorie implements Serializable {
+   
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long idParcours;
+    @Id
+    private Long idCategorie;
+
     @Temporal(TemporalType.DATE)
     Date tempsMaxOr = new Date();
     @Temporal(TemporalType.DATE)
