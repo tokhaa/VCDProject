@@ -6,7 +6,6 @@
 package com.VCDProject.javaBeans;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -32,11 +31,15 @@ public class Categorie implements Serializable {
     int ageMini;
     int ageMaxi;
     
+//*****************************************************************************************************************************************************************/
+//*********************************************************             UML NIVEAU 2 CLASSE Categorie          ****************************************************/
+//*****************************************************************************************************************************************************************/
     
   @OneToMany(mappedBy="categorie",cascade={CascadeType.PERSIST})
       private List<Participant> listeParticipant;
   @ManyToMany(mappedBy="categorie",cascade=CascadeType.PERSIST)
       private List<Parcours> listeParcours;
+  
 //*****************************************************************************************************************************************************************/
 //********************************************************     CONSTRUCTEURS CLASSE Categorie     *****************************************************************/
 //*****************************************************************************************************************************************************************/        

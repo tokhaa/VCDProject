@@ -49,7 +49,10 @@ public class Participant implements Serializable {
     @Temporal(TemporalType.DATE)
     Date dateInscription = new Date();
     boolean isAbandon;
-    
+
+//*****************************************************************************************************************************************************************/
+//*********************************************************             UML NIVEAU 2 CLASSE Participant          **************************************************/
+//*****************************************************************************************************************************************************************/    
     
 @ManyToOne
 private Parcours parcours;
@@ -57,7 +60,7 @@ private Parcours parcours;
 @ManyToOne(cascade=CascadeType.PERSIST)
 private Categorie categorie;
 
-  @OneToOne
+@OneToOne
 private Dossard dossard;
 
 //*****************************************************************************************************************************************************************/

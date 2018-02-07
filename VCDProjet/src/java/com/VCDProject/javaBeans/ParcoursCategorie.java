@@ -38,12 +38,16 @@ public class ParcoursCategorie implements Serializable{
     Date tempsMaxArgent = new Date();
     @Temporal(TemporalType.DATE)
     Date tempsMaxBronze = new Date();
+ 
+//*****************************************************************************************************************************************************************/
+//*********************************************************             UML NIVEAU 2 CLASSE ParcoursCategorie          ********************************************/
+//*****************************************************************************************************************************************************************/    
     
     // L'attribut mappedBy est très important car il permet de faire la relation entre les deux classes lors des jointures.
          @ManyToMany(cascade=CascadeType.PERSIST)    
          @JoinColumn(name="IDPARCOURS",insertable=false,updatable=false)  
          private Parcours parcours;   
-         @ManyToOne(cascade=CascadeType.PERSIST)   
+         @ManyToMany(cascade=CascadeType.PERSIST)   
          @JoinColumn(name="IDCATEGORIE",insertable=false,updatable=false)  
          private Categorie categorie;
 
