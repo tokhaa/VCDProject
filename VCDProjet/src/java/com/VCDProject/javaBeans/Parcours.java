@@ -38,9 +38,9 @@ public class Parcours implements Serializable {
     String image;
     
   @OneToMany
-      public List<Participant> listeParticipant= new ArrayList<>();
+      private List<Participant> listeParticipant= new ArrayList<>();
   @ManyToMany
-      public List<Categorie> listeCategorie= new ArrayList<>();
+      private List<Categorie> listeCategorie= new ArrayList<>();
 //****************************************************************************************************************************************************************/
 //********************************************************     CONSTRUCTEURS CLASSE Participant     ***************************************************************/
 //*****************************************************************************************************************************************************************/        
