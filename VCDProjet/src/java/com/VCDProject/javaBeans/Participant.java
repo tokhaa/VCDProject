@@ -7,6 +7,7 @@ package com.VCDProject.javaBeans;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -53,7 +54,7 @@ public class Participant implements Serializable {
 @ManyToOne
 private Parcours parcours;
 
-@ManyToOne
+@ManyToOne(cascade=CascadeType.PERSIST)
 private Categorie categorie;
 
   @OneToOne

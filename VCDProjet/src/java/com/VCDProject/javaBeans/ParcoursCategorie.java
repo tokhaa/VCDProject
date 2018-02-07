@@ -7,8 +7,12 @@ package com.VCDProject.javaBeans;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -23,11 +27,10 @@ import javax.persistence.TemporalType;
 
 //@IdClass(ParcoursCategorieID.class)
 @Entity
-public class ParcoursCategorie implements Serializable {
-@Id
-private Long idParcours;
-@Id
-private Long idCategorie;
+public class ParcoursCategorie implements Serializable{
+//Création de la classe composite
+  @EmbeddedId   
+  private ParcoursCategorieID parcoursCategorieID;
 
     @Temporal(TemporalType.DATE)
     Date tempsMaxOr = new Date();
@@ -35,6 +38,14 @@ private Long idCategorie;
     Date tempsMaxArgent = new Date();
     @Temporal(TemporalType.DATE)
     Date tempsMaxBronze = new Date();
+    
+    // L'attribut mappedBy est très important car il permet de faire la relation entre les deux classes lors des jointures.
+         @ManyToMany(cascade=CascadeType.PERSIST)    
+         @JoinColumn(name="IDPARCOURS",insertable=false,updatable=false)  
+         private Parcours parcours;   
+         @ManyToOne(cascade=CascadeType.PERSIST)   
+         @JoinColumn(name="IDCATEGORIE",insertable=false,updatable=false)  
+         private Categorie categorie;
 
 //*****************************************************************************************************************************************************************/
 //********************************************************     CONSTRUCTEURS CLASSE ParcoursCategorie     *********************************************************/

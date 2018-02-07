@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,10 +38,10 @@ public class Parcours implements Serializable {
     Date heureDepart = new Date();
     String image;
     
-  @OneToMany
-      private List<Participant> listeParticipant= new ArrayList<>();
-  @ManyToMany
-      private List<Categorie> listeCategorie= new ArrayList<>();
+  @OneToMany(mappedBy="parcours",cascade=CascadeType.PERSIST)
+      private List<Participant> listeParticipant;
+  @ManyToMany(mappedBy="parcours",cascade=CascadeType.PERSIST)
+      private List<Categorie> listeCategorie;
 //****************************************************************************************************************************************************************/
 //********************************************************     CONSTRUCTEURS CLASSE Participant     ***************************************************************/
 //*****************************************************************************************************************************************************************/        

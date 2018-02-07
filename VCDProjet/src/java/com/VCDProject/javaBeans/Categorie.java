@@ -8,6 +8,7 @@ package com.VCDProject.javaBeans;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,10 +33,10 @@ public class Categorie implements Serializable {
     int ageMaxi;
     
     
-  @OneToMany
-      private List<Participant> listeParticipant= new ArrayList<>();
-  @ManyToMany
-      private List<Parcours> listeParcours= new ArrayList<>();
+  @OneToMany(mappedBy="categorie",cascade={CascadeType.PERSIST})
+      private List<Participant> listeParticipant;
+  @ManyToMany(mappedBy="categorie",cascade=CascadeType.PERSIST)
+      private List<Parcours> listeParcours;
 //*****************************************************************************************************************************************************************/
 //********************************************************     CONSTRUCTEURS CLASSE Categorie     *****************************************************************/
 //*****************************************************************************************************************************************************************/        
