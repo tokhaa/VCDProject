@@ -43,7 +43,7 @@ public class Parcours implements Serializable {
     
   @OneToMany(mappedBy="parcours",cascade=CascadeType.PERSIST)
       private List<Participant> listeParticipant;
-  @ManyToMany(mappedBy="parcours",cascade=CascadeType.PERSIST)
+  @ManyToMany(mappedBy="listeParcours",cascade=CascadeType.ALL)
       private List<Categorie> listeCategorie;
   
 //****************************************************************************************************************************************************************/
