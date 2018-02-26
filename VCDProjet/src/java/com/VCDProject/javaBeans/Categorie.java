@@ -37,8 +37,14 @@ public class Categorie implements Serializable {
     
   @OneToMany(mappedBy="categorie",cascade={CascadeType.PERSIST})
       private List<Participant> listeParticipant;
+  
   @ManyToMany(cascade=CascadeType.ALL)
-      private List<Parcours> listeParcours;
+private List<Parcours> listeParcours;
+
+  /************************************************
+  @OneToMany(mappedBy="categorie",cascade=CascadeType.PERSIST)
+      private List<ParcoursCategorie> listeParcours;
+      * *******************************************/
   
 //*****************************************************************************************************************************************************************/
 //********************************************************     CONSTRUCTEURS CLASSE Categorie     *****************************************************************/

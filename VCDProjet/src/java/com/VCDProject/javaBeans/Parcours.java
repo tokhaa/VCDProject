@@ -41,10 +41,17 @@ public class Parcours implements Serializable {
 //*********************************************************             UML NIVEAU 2 CLASSE Parcours         ******************************************************/
 //*****************************************************************************************************************************************************************/
     
-  @OneToMany(mappedBy="parcours",cascade=CascadeType.PERSIST)
+  @OneToMany(cascade=CascadeType.ALL)
       private List<Participant> listeParticipant;
-  @ManyToMany(mappedBy="listeParcours",cascade=CascadeType.ALL)
-      private List<Categorie> listeCategorie;
+  
+    @ManyToMany(cascade=CascadeType.ALL)
+private List<Categorie> listeCategorie;
+
+  /*********************************************************
+  @OneToMany(mappedBy="parcours",cascade=CascadeType.PERSIST)
+      private List<ParcoursCategorie> listeCategorie;
+      * *****************************************************/
+  
   
 //****************************************************************************************************************************************************************/
 //********************************************************     CONSTRUCTEURS CLASSE Participant     ***************************************************************/

@@ -5,12 +5,29 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Accueil Admin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+    </h:head>
+    <h:body>
+        <h:form id="MenuAdmin">
+            <p:menubar>
+                <p:menuitem value="Accueil" outcome="admin_accueil.jsf" icon="ui-icon-home"/>
+                <p:menuitem value="Inscription" outcome="admin_inscription.jsf" icon="ui-icon-contact"/>
+                <p:menuitem value="Liste des inscrits" outcome="admin_liste_inscrits.jsf" icon="ui-icon-contact"/>
+                <p:menuitem value="Classement" outcome="admin_classement.jsf" icon="ui-icon-contact"/>
+                <p:menuitem value="Evennement Annexe / Autre" outcome="admin_evenements_annexes.jsf" icon="ui-icon-contact"/> 
+                <p:menuitem value="Connexion" outcome="connexion.jsf" icon="ui-icon-contact"/>
+                  <p:menuitem value="Deconnexion" outcome="accueil.jsf" icon="ui-icon-contact"/>
+            </p:menubar>
+             <p:menubar>
+                <p:menuitem value="Inscription" outcome="admin_inscription.jsf" icon="ui-icon-contact"/>
+                <p:menuitem value="Liste des inscrits" outcome="admin_liste_inscrits.jsf" icon="ui-icon-contact"/>
+                <p:menuitem value="Reglages" outcome="reglages.jsf" icon="ui-icon-contact"/>
+            </p:menubar>
+        </h:form>
+    </h:body>
 </html>

@@ -54,10 +54,10 @@ public class Participant implements Serializable {
 //*********************************************************             UML NIVEAU 2 CLASSE Participant          **************************************************/
 //*****************************************************************************************************************************************************************/    
     
-@ManyToOne
+@ManyToOne(cascade=CascadeType.ALL)
 private Parcours parcours;
 
-@ManyToOne(cascade=CascadeType.PERSIST)
+@ManyToOne(cascade=CascadeType.ALL)
 private Categorie categorie;
 
 @OneToOne

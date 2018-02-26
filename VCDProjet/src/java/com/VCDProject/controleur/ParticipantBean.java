@@ -20,7 +20,7 @@ import javax.persistence.PersistenceContext;
 public class ParticipantBean implements Serializable {
 
     @PersistenceContext
-    EntityManager em;               //Verification
+    EntityManager em;               //Connexion à la base de donnée
 
     
 }

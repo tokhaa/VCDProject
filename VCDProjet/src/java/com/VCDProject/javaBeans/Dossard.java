@@ -6,6 +6,7 @@
 package com.VCDProject.javaBeans;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,7 +32,7 @@ public class Dossard implements Serializable {
 //*********************************************************             UML NIVEAU 2 CLASSE Dossard          ******************************************************/
 //*****************************************************************************************************************************************************************/
    
- @OneToOne(mappedBy="dossard")
+ @OneToOne(cascade=CascadeType.ALL)
 private Participant participant;
   
 //*****************************************************************************************************************************************************************/

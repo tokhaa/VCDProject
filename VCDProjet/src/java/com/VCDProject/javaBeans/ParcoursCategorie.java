@@ -12,6 +12,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -29,7 +30,7 @@ import javax.persistence.TemporalType;
 public class ParcoursCategorie implements Serializable{
 //Création de la classe composite
   @EmbeddedId   
-  private ParcoursCategorieID parcoursCategorieID;
+  protected ParcoursCategorieID parcoursCategorieID;
 
     @Temporal(TemporalType.DATE)
     Date tempsMaxOr = new Date();
@@ -37,7 +38,15 @@ public class ParcoursCategorie implements Serializable{
     Date tempsMaxArgent = new Date();
     @Temporal(TemporalType.DATE)
     Date tempsMaxBronze = new Date();
+    
+     @ManyToOne   
+     @JoinColumn(name="IDCATEGORIE",insertable=false,updatable=false)  
+     private Categorie categorie;  
+     @ManyToOne(cascade=CascadeType.PERSIST)  
+     @JoinColumn(name="IDPARCOURS",insertable=false,updatable=false) 
+     private Parcours parcours;
 
+     
 //*****************************************************************************************************************************************************************/
 //********************************************************     CONSTRUCTEURS CLASSE ParcoursCategorie     *********************************************************/
 //*****************************************************************************************************************************************************************/               

@@ -15,7 +15,7 @@ import javax.persistence.Embeddable;
  */
 //Clé primaire plusieurs attribut donc on utilise @Embeddable
 @Embeddable
-class ParcoursCategorieID implements Serializable {
+public class ParcoursCategorieID implements Serializable {
     
     private Long idParcours;    
     private Long idCategorie;

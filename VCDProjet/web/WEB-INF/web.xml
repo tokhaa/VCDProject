@@ -17,7 +17,7 @@
    </servlet-mapping>
    
    <welcome-file-list>
-     <welcome-file>Accueil.jsf</welcome-file>
+     <welcome-file>accueil.jsf</welcome-file>
    </welcome-file-list>
    
     <session-config>
